@@ -1,0 +1,8 @@
+# Project Archimedes - Python Dependencies
+# TrueWealth Hackathon 2025
+
+# Core dependencies will be added as the project develops
+# Examples:
+# requests>=2.31.0
+# pandas>=2.0.0
+# numpy>=1.24.0
