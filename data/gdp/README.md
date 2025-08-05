@@ -1,4 +1,4 @@
-# GDP Per Capita Data
+# GDP Data
 
 ## Source
 gdp-maddison-project-database:
