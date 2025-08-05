@@ -43,17 +43,24 @@ class MIDBDataLoader(DataLoader):
         
         Returns:
             pd.DataFrame: Processed conflict data with columns:
-                - styear: Start year of conflict
+                - dispnum: Dispute number
+                - styear/endyear: Start/end years of participation
+                - stday/stmon/endday/endmon: Precise dates
                 - ccode: Country code (COW)
-                - country: Country name (mapped from ccode)  
-                - revstate: Regime change indicator
+                - country: Country name (mapped from ccode)
+                - sidea: Side A (aggressor) indicator
+                - revstate: Revisionist state indicator
+                - revtype1/revtype2: Types of revision sought
                 - fatality: Fatality level (0-6)
+                - fatalpre: Exact combat deaths
                 - hiact: Highest action level (0-21)
                 - hostlev: Hostility level (1-5)
                 - orig: Originator indicator
         """
-        # Select required columns
-        required_cols = ['styear', 'ccode', 'revstate', 'fatality', 'hiact', 'hostlev', 'orig']
+        # Select required columns for comprehensive assertiveness analysis
+        required_cols = ['dispnum', 'styear', 'endyear', 'stday', 'stmon', 'endday', 'endmon', 
+                        'ccode', 'sidea', 'revstate', 'revtype1', 'revtype2', 
+                        'fatality', 'fatalpre', 'hiact', 'hostlev', 'orig']
         
         # Check if all required columns exist
         missing_cols = [col for col in required_cols if col not in raw_data.columns]
@@ -164,3 +171,62 @@ class MIDBDataLoader(DataLoader):
         
         country_counts = self._data['ccode'].value_counts().head(n)
         return country_counts.index.tolist()
+    
+    def calculate_assertiveness_score(self) -> pd.DataFrame:
+        """
+        Calculate comprehensive assertiveness scores for each country-year.
+        
+        Combines multiple indicators:
+        - HostLev (1-5): Base hostility level
+        - HiAct (0-21): Escalation willingness, normalized
+        - Orig (0-1): Originator bonus
+        - RevState (0-1): Revisionist bonus
+        - SideA (0-1): Aggressor bonus
+        
+        Returns:
+            pd.DataFrame: Data with assertiveness_score column added
+        """
+        if not hasattr(self, '_data') or self._data is None:
+            self._data = self.load_data()
+        
+        data = self._data.copy()
+        
+        # Normalize HiAct to 0-1 scale (0-21 range)
+        data['hiact_norm'] = data['hiact'] / 21.0
+        
+        # Calculate composite assertiveness score
+        # Base score from hostility level (20% weight)
+        # Escalation willingness (30% weight)  
+        # Originator bonus (20% weight)
+        # Revisionist bonus (20% weight)
+        # Side A (aggressor) bonus (10% weight)
+        data['assertiveness_score'] = (
+            0.2 * (data['hostlev'] / 5.0) +  # Normalize hostlev to 0-1
+            0.3 * data['hiact_norm'] +
+            0.2 * data['orig'].fillna(0) +
+            0.2 * data['revstate'].fillna(0) +
+            0.1 * data['sidea'].fillna(0)
+        )
+        
+        return data
+    
+    def identify_status_quo_changes(self, threshold: float = 0.7) -> pd.DataFrame:
+        """
+        Identify instances where countries attempted major status quo changes.
+        
+        Args:
+            threshold: Assertiveness score threshold for status quo change attempts
+            
+        Returns:
+            pd.DataFrame: Filtered data showing only major status quo change attempts
+        """
+        assertive_data = self.calculate_assertiveness_score()
+        
+        # Major status quo changes: high assertiveness + revisionist intent
+        status_quo_changes = assertive_data[
+            (assertive_data['assertiveness_score'] >= threshold) &
+            (assertive_data['revstate'] == 1)
+        ].copy()
+        
+        return status_quo_changes[['styear', 'ccode', 'country', 'assertiveness_score', 
+                                  'revtype1', 'revtype2', 'hostlev', 'hiact']]

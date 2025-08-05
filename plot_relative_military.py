@@ -34,11 +34,7 @@ def plot_relative_military_scores():
         'France',
         'Germany',
         'Russia',
-        'China',
-        'Japan',
-        'Italy',
-        'Austria-Hungary',
-        'Turkey'
+        'China'
     ]
     
     colors = ['red', 'blue', 'green', 'orange', 'purple', 'brown', 'pink', 'gray', 'olive', 'cyan']
