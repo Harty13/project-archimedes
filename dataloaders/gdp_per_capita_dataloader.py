@@ -14,7 +14,7 @@ class GDPPerCapitaDataLoader:
     Focuses on historical GDP per capita comparisons between countries
     """
     
-    def __init__(self, data_file="data/gdp_per_capita/gdp-per-capita-maddison-project-database.csv"):
+    def __init__(self, data_file="data/gdp/gdp-per-capita-maddison-project-database.csv"):
         self.data_file = Path(data_file)
         self.raw_data = pd.DataFrame()
         self.processed_data = pd.DataFrame()
