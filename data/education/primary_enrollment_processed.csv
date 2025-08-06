@@ -1,0 +1,92 @@
+country,year,enrollment_rate
+China,1850,0.01
+China,1855,0.02
+China,1860,0.03
+China,1865,0.05
+China,1870,0.08
+China,1875,0.14
+China,1880,0.23
+China,1885,0.36
+China,1890,0.57
+China,1895,0.9
+China,1900,1.4
+China,1905,2.15
+China,1910,3.28
+China,1915,4.96
+China,1920,7.4
+China,1925,11.1
+China,1930,17.67
+China,1935,22.21
+China,1940,19.62
+China,1945,30.99
+China,1950,32.9
+China,1955,56.4
+China,1960,68.19
+China,1965,68.19
+China,1970,68.19
+China,1975,96.53
+China,1980,80.44
+China,1987,96.09798
+China,1988,97.18013
+China,1989,95.39508
+China,1990,92.30862
+China,1991,91.67418
+China,1992,90.562
+China,1993,90.19127
+China,1994,90.04897
+China,1995,91.20353
+China,1996,92.07338
+China,1997,93.32369
+United States,1820,41.44
+United States,1825,42.94
+United States,1830,53.37
+United States,1835,55.38
+United States,1840,59.73
+United States,1845,70.0
+United States,1850,80.12
+United States,1855,88.03
+United States,1860,97.46
+United States,1865,98.08
+United States,1870,100.0
+United States,1875,100.0
+United States,1880,100.0
+United States,1885,100.0
+United States,1890,100.0
+United States,1895,100.0
+United States,1900,100.0
+United States,1905,100.0
+United States,1910,100.0
+United States,1915,100.0
+United States,1920,100.0
+United States,1925,100.0
+United States,1930,100.0
+United States,1935,100.0
+United States,1940,100.0
+United States,1945,100.0
+United States,1950,100.0
+United States,1955,100.0
+United States,1960,100.0
+United States,1965,95.92
+United States,1970,95.92
+United States,1975,72.0
+United States,1980,94.0
+United States,1986,95.65829
+United States,1987,96.12153
+United States,1990,97.01566
+United States,1991,96.74785
+United States,1993,95.89471
+United States,1994,95.84435
+United States,1995,97.15577
+United States,1996,95.7734
+United States,1999,98.14681
+United States,2005,99.43481
+United States,2013,97.10193
+United States,2014,97.97434
+United States,2015,98.19414
+United States,2016,99.64003
+United States,2017,99.57562
+United States,2018,99.42579
+United States,2019,99.08343
+United States,2020,97.99492
+United States,2021,95.90488
+United States,2022,96.01779

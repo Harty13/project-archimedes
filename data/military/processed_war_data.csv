@@ -1,0 +1,41 @@
+WarNum,WarName,StartYear,Country,BattleDeaths,Side,Initiator,Outcome,IsInterCountryConflict
+7,Mexican-American,1846,United States of America,13283,1,1,1,False
+22,Crimean,1854,United Kingdom,22000,1,2,1,False
+25,Anglo-Persian,1856,United Kingdom,500,1,1,1,False
+65,Conquest of Egypt,1882,United Kingdom,79,1,1,1,False
+67,Sino-French,1884,China,10000,2,2,2,False
+73,First Sino-Japanese,1894,China,10000,2,2,2,False
+79,Spanish-American,1898,United States of America,2910,1,1,1,False
+82,Boxer Rebellion,1900,United States of America,21,1,1,1,True
+82,Boxer Rebellion,1900,China,2000,2,2,2,True
+82,Boxer Rebellion,1900,United Kingdom,34,1,1,1,True
+83,Sino-Russian,1900,China,3758,2,2,2,False
+106,World War I,1914,United Kingdom,908371,1,2,1,False
+106,World War I,1914,United States of America,116516,1,2,1,False
+118,Manchurian,1929,China,3000,2,2,2,False
+121,Second Sino-Japanese,1931,China,50000,2,2,2,False
+130,Third Sino-Japanese,1937,China,750000,2,2,2,False
+139,World War II,1941,United States of America,405400,1,2,1,False
+139,World War II,1941,United Kingdom,418765,1,2,1,False
+139,World War II,1941,China,1350000,1,2,1,False
+151,Korean,1950,China,422612,2,2,6,True
+151,Korean,1950,United Kingdom,710,1,2,6,True
+151,Korean,1950,United States of America,54487,1,2,6,True
+153,Off-shore Islands,1954,China,1003,1,1,1,False
+155,Sinai War,1956,United Kingdom,22,1,2,1,False
+159,Taiwan Straits,1958,China,300,1,1,6,False
+160,Assam,1962,China,500,1,1,1,False
+163,"Vietnam War, Phase 2",1965,United States of America,58153,2,1,2,False
+170,"Second Laotian, Phase 2",1968,United States of America,375,2,2,2,False
+176,Communist Coalition,1970,United States of America,125,2,2,4,False
+193,Sino-Vietnamese Punitive,1979,China,13000,1,1,1,False
+202,Falkland Islands,1982,United Kingdom,255,1,2,1,False
+208,Sino-Vietnamese Border War,1987,China,1800,1,1,6,False
+211,Gulf War,1991,United States of America,376,1,2,1,False
+211,Gulf War,1991,United Kingdom,24,1,2,1,False
+221,War for Kosovo,1999,United Kingdom,0,1,1,1,False
+221,War for Kosovo,1999,United States of America,2,1,1,1,False
+225,Invasion of Afghanistan,2001,United Kingdom,0,1,1,4,False
+225,Invasion of Afghanistan,2001,United States of America,2,1,1,4,False
+227,Invasion of Iraq,2003,United Kingdom,33,1,1,4,False
+227,Invasion of Iraq,2003,United States of America,140,1,1,4,False
