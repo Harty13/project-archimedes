@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Great Game - Archimedes Model</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <!-- Fullscreen Globe Background -->
+        <div id="globe-container">
+            <canvas id="globe-canvas"></canvas>
+        </div>
+
+        <!-- Terminal Interface Overlay -->
+        <div id="terminal-overlay">
+            <!-- Header -->
+            <div id="terminal-header">
+                <div class="terminal-line">
+                    <span class="prompt">archimedes@system:~$</span> 
+                    <span class="command">./great_game --initialize</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="output">THE GREAT GAME v1.0</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="output">Archimedes Model for Predicting Future Power</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="output">Training Period: 1826-1956 | AUC: 0.613</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="prompt">archimedes@system:~$</span> 
+                    <span class="command">configure_civilization</span>
+                </div>
+            </div>
+
+            <!-- Control Panel -->
+            <div id="control-panel">
+                <div class="parameter-group">
+                    <div class="terminal-line">
+                        <span class="param-label">military_power_ratio</span>
+                        <span class="param-value" id="military-value">0.0</span>
+                    </div>
+                    <input type="range" id="military-slider" min="-1" max="1" step="0.1" value="0" class="terminal-slider">
+                    <div class="param-description">relative military strength vs rival civilization</div>
+                </div>
+
+                <div class="parameter-group">
+                    <div class="terminal-line">
+                        <span class="param-label">education_ratio</span>
+                        <span class="param-value" id="education-value">0.0</span>
+                    </div>
+                    <input type="range" id="education-slider" min="-1" max="1" step="0.1" value="0" class="terminal-slider">
+                    <div class="param-description">educational advancement and knowledge systems</div>
+                </div>
+
+                <div class="parameter-group">
+                    <div class="terminal-line">
+                        <span class="param-label">food_price_volatility</span>
+                        <span class="param-value" id="volatility-value">0.0</span>
+                    </div>
+                    <input type="range" id="volatility-slider" min="-1" max="1" step="0.1" value="0" class="terminal-slider">
+                    <div class="param-description">economic dynamism and structural change</div>
+                </div>
+
+                <div class="parameter-group">
+                    <div class="terminal-line">
+                        <span class="param-label">exchange_rate_volatility</span>
+                        <span class="param-value" id="exchange-value">0.0</span>
+                    </div>
+                    <input type="range" id="exchange-slider" min="-1" max="1" step="0.1" value="0" class="terminal-slider">
+                    <div class="param-description">currency stability and trade relationships</div>
+                </div>
+
+                <!-- Command Line -->
+                <div id="command-line">
+                    <div class="terminal-line">
+                        <span class="prompt">archimedes@system:~$</span>
+                        <button id="simulate-btn" class="terminal-button">simulate --predict-outcome</button>
+                        <button id="reset-btn" class="terminal-button">reset --all-parameters</button>
+                    </div>
+                </div>
+
+                <!-- Results Display (Hidden Initially) -->
+                <div id="results-display" class="hidden">
+                    <div class="terminal-line">
+                        <span class="output">SIMULATION COMPLETE</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="output">probability_of_success: </span>
+                        <span id="probability-value" class="result-value">--</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="output">power_score: </span>
+                        <span id="power-score-value" class="result-value">--</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span id="outcome-message" class="outcome-text">--</span>
+                    </div>
+                    <div id="factor-analysis" class="factor-section">
+                        <div class="terminal-line">
+                            <span class="output">key_factors:</span>
+                        </div>
+                        <div id="factor-list"></div>
+                    </div>
+                </div>
+
+                <!-- Historical Context -->
+                <div id="historical-context">
+                    <div class="terminal-line">
+                        <span class="output">historical_context:</span>
+                    </div>
+                    <div class="terminal-line context-text" id="context-text">
+                        The Archimedes Model analyzes power transitions between great civilizations.
+                        Adjust parameters to configure your civilization's characteristics.
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Link -->
+            <div id="terminal-footer">
+                <div class="terminal-line">
+                    <span class="prompt">archimedes@system:~$</span>
+                    <a href="#" id="about-link" class="terminal-link">cat README.md</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Modal -->
+        <div id="about-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="terminal-line">
+                    <span class="output">README.md</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="output">========================================</span>
+                </div>
+                <div class="about-content">
+                    <div class="terminal-line">
+                        <span class="output">ARCHIMEDES MODEL</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="param-description">Logistic regression model for predicting future power transitions</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="param-description">Training data: 1826-1956 (58 observations of US and UK Macroeconomic variables)</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="param-description">Target: GDP advantage increase over next 5 years</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="output">MODEL PERFORMANCE:</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="param-description">AUC Score: 0.613 (Moderate predictive ability)</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="param-description">Accuracy: 55.2% (Better than random)</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="output">KEY PREDICTORS:</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="param-description">food_price_volatility: +0.513 (Economic dynamism drives growth)</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="param-description">military_power: -0.466 (Military focus may limit economic development)</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="param-description">education: +0.127 (Knowledge systems support advancement)</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="param-description">exchange_rate_volatility: -0.071 (Stability benefits development)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/archimedes-model.js"></script>
+    <script src="js/globe.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
