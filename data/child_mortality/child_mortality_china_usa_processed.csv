@@ -1,0 +1,603 @@
+country,year,mortality_rate
+China,1800,417.44
+China,1801,417.44
+China,1802,417.44
+China,1803,417.44
+China,1804,417.44
+China,1805,417.44
+China,1806,417.44
+China,1807,417.44
+China,1808,417.44
+China,1809,417.44
+China,1810,417.44
+China,1811,417.44
+China,1812,417.44
+China,1813,417.44
+China,1814,417.44
+China,1815,417.44
+China,1816,417.44
+China,1817,417.44
+China,1818,417.44
+China,1819,417.44
+China,1820,417.44
+China,1821,417.44
+China,1822,417.44
+China,1823,417.44
+China,1824,417.44
+China,1825,417.44
+China,1826,417.44
+China,1827,417.44
+China,1828,417.44
+China,1829,417.44
+China,1830,417.44
+China,1831,417.44
+China,1832,417.44
+China,1833,417.44
+China,1834,417.44
+China,1835,417.44
+China,1836,417.44
+China,1837,417.44
+China,1838,417.44
+China,1839,417.44
+China,1840,417.44
+China,1841,417.44
+China,1842,417.44
+China,1843,417.44
+China,1844,417.44
+China,1845,417.44
+China,1846,417.44
+China,1847,417.44
+China,1848,417.44
+China,1849,417.44
+China,1850,417.44
+China,1851,430.46
+China,1852,443.79
+China,1853,457.41
+China,1854,471.38
+China,1855,485.68
+China,1856,500.35
+China,1857,491.55
+China,1858,481.39
+China,1859,472.81
+China,1860,464.39
+China,1861,456.05
+China,1862,446.51
+China,1863,438.46
+China,1864,430.46
+China,1865,429.16
+China,1866,426.55
+China,1867,425.25
+China,1868,422.65
+China,1869,421.34
+China,1870,418.74
+China,1871,417.44
+China,1872,417.44
+China,1873,417.44
+China,1874,417.44
+China,1875,417.44
+China,1876,417.44
+China,1877,417.44
+China,1878,417.44
+China,1879,417.44
+China,1880,417.44
+China,1881,417.44
+China,1882,417.44
+China,1883,417.44
+China,1884,417.44
+China,1885,417.44
+China,1886,417.44
+China,1887,417.44
+China,1888,417.44
+China,1889,417.44
+China,1890,417.44
+China,1891,417.44
+China,1892,417.44
+China,1893,417.44
+China,1894,417.42
+China,1895,417.39
+China,1896,417.33
+China,1897,417.22
+China,1898,417.05
+China,1899,416.83
+China,1900,416.53
+China,1901,416.17
+China,1902,415.75
+China,1903,415.26
+China,1904,414.7
+China,1905,414.08
+China,1906,413.4
+China,1907,412.65
+China,1908,411.83
+China,1909,410.96
+China,1910,410.05
+China,1911,409.1
+China,1912,408.13
+China,1913,407.15
+China,1914,406.17
+China,1915,405.19
+China,1916,404.21
+China,1917,403.23
+China,1918,402.25
+China,1919,401.27
+China,1920,400.29
+China,1921,399.31
+China,1922,398.33
+China,1923,397.35
+China,1924,396.38
+China,1925,395.4
+China,1926,394.42
+China,1927,393.44
+China,1928,392.46
+China,1929,391.48
+China,1930,390.5
+China,1931,383.57
+China,1932,376.67
+China,1933,369.93
+China,1934,363.22
+China,1935,356.66
+China,1936,350.12
+China,1937,345.93
+China,1938,340.65
+China,1939,336.49
+China,1940,332.42
+China,1941,330.86
+China,1942,329.3
+China,1943,327.76
+China,1944,326.22
+China,1945,324.69
+China,1946,323.16
+China,1947,321.64
+China,1948,320.13
+China,1949,318.63
+China,1950,317.13
+China,1951,311.71
+China,1952,306.39
+China,1953,301.16
+China,1954,296.02
+China,1955,290.96
+China,1956,270.32
+China,1957,251.14
+China,1958,233.32
+China,1959,268.45
+China,1960,308.99
+China,1961,261.86
+China,1962,167.82
+China,1963,148.14
+China,1964,130.77
+China,1965,115.43
+China,1966,120.8
+China,1967,130.09
+China,1968,130.75
+China,1969,118.61
+China,1970,112.59
+China,1971,106.98
+China,1972,101.48
+China,1973,95.94
+China,1974,90.41
+China,1975,84.92
+China,1976,79.57
+China,1977,74.49
+China,1978,69.93
+China,1979,65.95
+China,1980,62.55
+China,1981,59.74
+China,1982,57.51
+China,1983,55.81
+China,1984,54.66
+China,1985,54.0
+China,1986,53.77
+China,1987,53.78
+China,1988,53.87
+China,1989,53.89
+China,1990,53.71
+China,1991,53.17
+China,1992,52.18
+China,1993,50.81
+China,1994,49.2
+China,1995,47.39
+China,1996,45.48
+China,1997,43.51
+China,1998,41.45
+China,1999,39.22
+China,2000,36.81
+China,2001,34.23
+China,2002,31.53
+China,2003,28.86
+China,2004,26.32
+China,2005,23.99
+China,2006,21.9
+China,2007,20.07
+China,2008,18.46
+China,2009,17.04
+China,2010,15.76
+China,2011,14.59
+China,2012,13.51
+China,2013,12.5
+China,2014,11.58
+China,2015,10.73
+China,2016,9.95
+China,2017,9.23
+China,2018,8.6
+China,2019,8.34
+China,2020,8.09
+China,2021,7.85
+China,2022,7.61
+China,2023,7.39
+China,2024,7.18
+China,2025,6.97
+China,2026,6.77
+China,2027,6.58
+China,2028,6.4
+China,2029,6.23
+China,2030,6.06
+China,2031,5.9
+China,2032,5.75
+China,2033,5.6
+China,2034,5.46
+China,2035,5.32
+China,2036,5.19
+China,2037,5.07
+China,2038,4.94
+China,2039,4.83
+China,2040,4.72
+China,2041,4.61
+China,2042,4.51
+China,2043,4.41
+China,2044,4.31
+China,2045,4.22
+China,2046,4.14
+China,2047,4.05
+China,2048,3.98
+China,2049,3.9
+China,2050,3.82
+China,2051,3.75
+China,2052,3.68
+China,2053,3.61
+China,2054,3.55
+China,2055,3.48
+China,2056,3.43
+China,2057,3.37
+China,2058,3.32
+China,2059,3.28
+China,2060,3.23
+China,2061,3.2
+China,2062,3.16
+China,2063,3.12
+China,2064,3.09
+China,2065,3.06
+China,2066,3.02
+China,2067,2.99
+China,2068,2.96
+China,2069,2.93
+China,2070,2.9
+China,2071,2.86
+China,2072,2.83
+China,2073,2.8
+China,2074,2.78
+China,2075,2.75
+China,2076,2.72
+China,2077,2.69
+China,2078,2.66
+China,2079,2.63
+China,2080,2.61
+China,2081,2.58
+China,2082,2.56
+China,2083,2.53
+China,2084,2.51
+China,2085,2.48
+China,2086,2.46
+China,2087,2.43
+China,2088,2.41
+China,2089,2.39
+China,2090,2.36
+China,2091,2.34
+China,2092,2.32
+China,2093,2.3
+China,2094,2.28
+China,2095,2.25
+China,2096,2.23
+China,2097,2.21
+China,2098,2.19
+China,2099,2.17
+China,2100,2.17
+United States,1800,329.04
+United States,1801,329.04
+United States,1802,329.04
+United States,1803,329.04
+United States,1804,329.04
+United States,1805,329.04
+United States,1806,329.04
+United States,1807,329.04
+United States,1808,329.04
+United States,1809,329.04
+United States,1810,329.04
+United States,1811,329.04
+United States,1812,329.04
+United States,1813,329.04
+United States,1814,329.04
+United States,1815,329.04
+United States,1816,329.04
+United States,1817,329.04
+United States,1818,329.04
+United States,1819,329.04
+United States,1820,329.04
+United States,1821,329.04
+United States,1822,329.04
+United States,1823,329.04
+United States,1824,329.04
+United States,1825,329.04
+United States,1826,329.04
+United States,1827,329.04
+United States,1828,329.04
+United States,1829,329.04
+United States,1830,329.04
+United States,1831,329.04
+United States,1832,329.04
+United States,1833,329.04
+United States,1834,329.04
+United States,1835,329.04
+United States,1836,329.04
+United States,1837,329.04
+United States,1838,329.04
+United States,1839,329.04
+United States,1840,329.04
+United States,1841,329.04
+United States,1842,329.04
+United States,1843,329.04
+United States,1844,329.04
+United States,1845,329.04
+United States,1846,329.04
+United States,1847,329.04
+United States,1848,329.04
+United States,1849,329.04
+United States,1850,329.04
+United States,1851,329.04
+United States,1852,329.04
+United States,1853,329.04
+United States,1854,329.04
+United States,1855,329.04
+United States,1856,329.04
+United States,1857,329.04
+United States,1858,329.04
+United States,1859,329.04
+United States,1860,329.04
+United States,1861,329.04
+United States,1862,329.04
+United States,1863,329.04
+United States,1864,329.04
+United States,1865,329.04
+United States,1866,329.04
+United States,1867,329.04
+United States,1868,329.04
+United States,1869,329.04
+United States,1870,329.04
+United States,1871,329.04
+United States,1872,329.04
+United States,1873,329.04
+United States,1874,329.04
+United States,1875,329.04
+United States,1876,329.04
+United States,1877,329.04
+United States,1878,329.04
+United States,1879,329.04
+United States,1880,329.04
+United States,1881,322.4
+United States,1882,315.87
+United States,1883,309.38
+United States,1884,304.05
+United States,1885,297.7
+United States,1886,291.41
+United States,1887,285.21
+United States,1888,279.06
+United States,1889,274.0
+United States,1890,267.97
+United States,1891,264.0
+United States,1892,260.02
+United States,1893,257.1
+United States,1894,253.19
+United States,1895,249.28
+United States,1896,246.37
+United States,1897,242.47
+United States,1898,238.58
+United States,1899,234.69
+United States,1900,231.7
+United States,1901,227.8
+United States,1902,216.59
+United States,1903,215.43
+United States,1904,224.23
+United States,1905,217.53
+United States,1906,218.96
+United States,1907,217.67
+United States,1908,202.16
+United States,1909,193.91
+United States,1910,202.16
+United States,1911,187.93
+United States,1912,181.6
+United States,1913,186.19
+United States,1914,176.62
+United States,1915,172.1
+United States,1916,179.04
+United States,1917,180.24
+United States,1918,239.32
+United States,1919,168.84
+United States,1920,167.64
+United States,1921,145.53
+United States,1922,145.92
+United States,1923,150.11
+United States,1924,139.7
+United States,1925,130.0
+United States,1926,120.99
+United States,1927,112.59
+United States,1928,104.78
+United States,1929,97.51
+United States,1930,90.75
+United States,1931,84.44
+United States,1932,78.58
+United States,1933,73.12
+United States,1934,79.71
+United States,1935,75.32
+United States,1936,75.94
+United States,1937,73.58
+United States,1938,69.53
+United States,1939,62.88
+United States,1940,61.85
+United States,1941,60.33
+United States,1942,54.71
+United States,1943,53.67
+United States,1944,50.29
+United States,1945,48.19
+United States,1946,46.61
+United States,1947,42.76
+United States,1948,39.7
+United States,1949,39.62
+United States,1950,37.63
+United States,1951,36.62
+United States,1952,35.63
+United States,1953,34.68
+United States,1954,33.79
+United States,1955,33.0
+United States,1956,32.32
+United States,1957,31.71
+United States,1958,31.14
+United States,1959,30.6
+United States,1960,30.05
+United States,1961,29.49
+United States,1962,28.92
+United States,1963,28.33
+United States,1964,27.72
+United States,1965,27.08
+United States,1966,26.4
+United States,1967,25.68
+United States,1968,24.91
+United States,1969,24.1
+United States,1970,23.25
+United States,1971,22.37
+United States,1972,21.47
+United States,1973,20.57
+United States,1974,19.67
+United States,1975,18.78
+United States,1976,17.92
+United States,1977,17.1
+United States,1978,16.33
+United States,1979,15.62
+United States,1980,14.97
+United States,1981,14.38
+United States,1982,13.86
+United States,1983,13.41
+United States,1984,13.03
+United States,1985,12.7
+United States,1986,12.42
+United States,1987,12.15
+United States,1988,11.87
+United States,1989,11.57
+United States,1990,11.24
+United States,1991,10.88
+United States,1992,10.5
+United States,1993,10.13
+United States,1994,9.78
+United States,1995,9.46
+United States,1996,9.18
+United States,1997,8.94
+United States,1998,8.75
+United States,1999,8.59
+United States,2000,8.45
+United States,2001,8.33
+United States,2002,8.23
+United States,2003,8.14
+United States,2004,8.05
+United States,2005,7.96
+United States,2006,7.86
+United States,2007,7.75
+United States,2008,7.61
+United States,2009,7.47
+United States,2010,7.33
+United States,2011,7.2
+United States,2012,7.08
+United States,2013,6.97
+United States,2014,6.88
+United States,2015,6.8
+United States,2016,6.73
+United States,2017,6.64
+United States,2018,6.53
+United States,2019,6.58
+United States,2020,6.62
+United States,2021,6.64
+United States,2022,6.62
+United States,2023,6.57
+United States,2024,6.48
+United States,2025,6.35
+United States,2026,6.19
+United States,2027,5.99
+United States,2028,5.79
+United States,2029,5.58
+United States,2030,5.37
+United States,2031,5.18
+United States,2032,5.0
+United States,2033,4.84
+United States,2034,4.7
+United States,2035,4.58
+United States,2036,4.48
+United States,2037,4.38
+United States,2038,4.29
+United States,2039,4.21
+United States,2040,4.12
+United States,2041,4.03
+United States,2042,3.95
+United States,2043,3.87
+United States,2044,3.79
+United States,2045,3.71
+United States,2046,3.64
+United States,2047,3.56
+United States,2048,3.5
+United States,2049,3.43
+United States,2050,3.37
+United States,2051,3.31
+United States,2052,3.25
+United States,2053,3.19
+United States,2054,3.14
+United States,2055,3.09
+United States,2056,3.04
+United States,2057,2.99
+United States,2058,2.94
+United States,2059,2.89
+United States,2060,2.85
+United States,2061,2.81
+United States,2062,2.76
+United States,2063,2.72
+United States,2064,2.68
+United States,2065,2.64
+United States,2066,2.6
+United States,2067,2.57
+United States,2068,2.53
+United States,2069,2.49
+United States,2070,2.46
+United States,2071,2.43
+United States,2072,2.39
+United States,2073,2.36
+United States,2074,2.33
+United States,2075,2.3
+United States,2076,2.27
+United States,2077,2.24
+United States,2078,2.21
+United States,2079,2.18
+United States,2080,2.16
+United States,2081,2.13
+United States,2082,2.1
+United States,2083,2.07
+United States,2084,2.05
+United States,2085,2.02
+United States,2086,2.0
+United States,2087,1.97
+United States,2088,1.95
+United States,2089,1.92
+United States,2090,1.9
+United States,2091,1.87
+United States,2092,1.85
+United States,2093,1.83
+United States,2094,1.81
+United States,2095,1.78
+United States,2096,1.76
+United States,2097,1.74
+United States,2098,1.72
+United States,2099,1.7
+United States,2100,1.7
