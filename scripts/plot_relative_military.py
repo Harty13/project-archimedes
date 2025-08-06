@@ -2,6 +2,9 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import pandas as pd
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from dataloaders.nmc_dataloader import NMCDataLoader
 
 def calculate_relative_military_scores():
@@ -175,6 +178,92 @@ def plot_combined_military_scores():
     plt.savefig('combined_military_power.png', dpi=300, bbox_inches='tight')
     print('Combined plot saved as combined_military_power.png')
 
+def plot_china_usa_military_scores():
+    data = calculate_relative_military_scores()
+    
+    # Calculate combined scores
+    data['combined_multiplicative'] = data['milex_pct'] * data['milper_pct']
+    
+    # Focus on China and USA only
+    target_countries = [
+        'China',
+        'United States of America'
+    ]
+    
+    colors = ['red', 'blue']
+    
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(15, 12))
+    fig.suptitle('Combined Military Power: China vs USA', fontsize=16)
+    
+    # Plot multiplicative combined scores
+    china_data = None
+    usa_data = None
+    
+    for i, country in enumerate(target_countries):
+        country_data = data[data['country'] == country]
+        if not country_data.empty:
+            # Filter out NaN values
+            country_data_clean = country_data.dropna(subset=['combined_multiplicative'])
+            if not country_data_clean.empty:
+                ax1.plot(country_data_clean['year'], country_data_clean['combined_multiplicative'], 
+                        color=colors[i], label=country, linewidth=2, alpha=0.8)
+                
+                # Store data for ratio calculation
+                if country == 'China':
+                    china_data = country_data_clean
+                elif country == 'United States of America':
+                    usa_data = country_data_clean
+    
+    ax1.set_title('Combined Military Power (Multiplicative: Expenditure % × Personnel %)')
+    ax1.set_xlabel('Year')
+    ax1.set_ylabel('Combined Score (% squared)')
+    ax1.legend()
+    ax1.grid(True, alpha=0.3)
+    ax1.set_ylim(bottom=0)
+    
+    # Calculate and plot China/USA ratio
+    if china_data is not None and usa_data is not None:
+        # Merge on year to calculate ratios
+        merged = china_data[['year', 'combined_multiplicative']].merge(
+            usa_data[['year', 'combined_multiplicative']], 
+            on='year', 
+            suffixes=('_china', '_usa')
+        )
+        
+        # Calculate ratio (avoid division by zero and negative values)
+        merged['ratio'] = merged['combined_multiplicative_china'] / merged['combined_multiplicative_usa']
+        merged_clean = merged.dropna(subset=['ratio'])
+        merged_clean = merged_clean[merged_clean['combined_multiplicative_usa'] > 0]
+        merged_clean = merged_clean[merged_clean['combined_multiplicative_china'] >= 0]
+        merged_clean = merged_clean[merged_clean['ratio'] >= 0]
+        
+        if not merged_clean.empty:
+            ax2.plot(merged_clean['year'], merged_clean['ratio'], 
+                    color='green', linewidth=2, alpha=0.8)
+            ax2.set_title('China/USA Military Power Ratio (Multiplicative)')
+            ax2.set_xlabel('Year')
+            ax2.set_ylabel('Ratio (China/USA)')
+            ax2.grid(True, alpha=0.3)
+            ax2.axhline(y=1, color='black', linestyle='--', alpha=0.5, label='Equal Power (ratio=1)')
+            ax2.legend()
+            
+            # Print recent ratio values
+            print('\nChina/USA Military Power Ratios (Recent decades):')
+            recent_data = merged_clean[merged_clean['year'] >= 1950].tail(10)
+            for _, row in recent_data.iterrows():
+                print(f'  {int(row["year"])}: {row["ratio"]:.2f}')
+            
+            # Save ratio data to CSV
+            ratio_df = merged_clean[['year', 'ratio']].copy()
+            ratio_df['year'] = ratio_df['year'].astype(int)
+            ratio_df.to_csv('data/ratios/china_usa_military_ratio.csv', index=False)
+            print(f'\nRatio data saved to data/ratios/china_usa_military_ratio.csv ({len(ratio_df)} records)')
+    
+    plt.tight_layout()
+    plt.savefig('china_usa_military_power.png', dpi=300, bbox_inches='tight')
+    print('China/USA plot saved as china_usa_military_power.png')
+
 if __name__ == "__main__":
     plot_relative_military_scores()
     plot_combined_military_scores()
+    plot_china_usa_military_scores()
