@@ -23,48 +23,38 @@
 
 Let $t$ index years. For any variable $X$, define the \emph{log ratio}
 \[
-x_t \equiv \ln\!\frac{X_t^{\US}}{X_t^{\UK}},
-\]
-and for shares in $(0,1)$ use \emph{log-odds}.
-
-\paragraph{Affordability (wheat).}
-Given $A_t^{\US}=p_t^{\US}/y^{pc,\US}_t$ and $A_t^{\UK}$,
-\[
-a_t \equiv \ln\!\frac{A_t^{\US}}{A_t^{\UK}}
-\quad\text{(higher $\,\Rightarrow\,$ wheat less affordable in US vs UK).}
-\]
-Often flip the sign so ``cheaper in US'' is positive: $\tilde a_t \equiv -a_t$.
-
-\paragraph{GDP (level, not per capita).}
-\[
-g_t \equiv \ln\!\frac{\mathrm{GDP}^{\US}_t}{\mathrm{GDP}^{\UK}_t}.
+x_t \equiv \ln\!\frac{X_t^{\US}}{X_t^{\UK}}.
 \]
 
-\paragraph{Military/industrial capacity (relative global shares).}
+Based on available data, we construct the following relative predictors:
+
+\paragraph{Military power ratio.}
 Let $S^{\US}_t$ and $S^{\UK}_t$ denote the US and UK shares of global military capacity:
 \[
-S^{\US}_t = \frac{\mathrm{MilEx}^{\US}_t}{\sum_{i} \mathrm{MilEx}^i_t}, \quad
-S^{\UK}_t = \frac{\mathrm{MilEx}^{\UK}_t}{\sum_{i} \mathrm{MilEx}^i_t},
+S^{\US}_t = \frac{\mathrm{MilCap}^{\US}_t}{\sum_{i} \mathrm{MilCap}^i_t}, \quad
+S^{\UK}_t = \frac{\mathrm{MilCap}^{\UK}_t}{\sum_{i} \mathrm{MilCap}^i_t},
 \]
-where $\mathrm{MilEx}^i_t$ is military expenditure for country $i$ at time $t$. Then:
+where $\mathrm{MilCap}^i_t$ represents military capacity for country $i$ at time $t$. Then:
 \[
 m_t \equiv \ln\!\frac{S^{\US}_t}{S^{\UK}_t}
 \quad\text{(log ratio of global military shares).}
 \]
-This captures relative position in the global military hierarchy rather than simple bilateral comparison. Alternative: use military personnel shares $\mathrm{MilPer}^i_t$ instead of expenditures.
+This captures relative position in the global military hierarchy rather than simple bilateral comparison.
 
-\paragraph{Education (e.g., avg.\ years, enrollment, literacy).}
+\paragraph{Education ratio.}
 \[
 e_t \equiv \ln\!\frac{\mathrm{Edu}^{\US}_t}{\mathrm{Edu}^{\UK}_t}.
 \]
 
-\paragraph{Urbanization share.}
-For $s^{\US}_t, s^{\UK}_t\in(0,1)$ use a log-odds differential:
+\paragraph{Food price volatility ratio.}
+Let $\sigma^{\US}_t$ and $\sigma^{\UK}_t$ denote the volatility of food prices in the US and UK respectively:
 \[
-u_t \equiv \underbrace{\ln\!\frac{s^{\US}_t}{1-s^{\US}_t}}_{\logit(s^{\US}_t)}
--\underbrace{\ln\!\frac{s^{\UK}_t}{1-s^{\UK}_t}}_{\logit(s^{\UK}_t)}.
+v_t \equiv \ln\!\frac{\sigma^{\US}_t}{\sigma^{\UK}_t}
+\quad\text{(higher $\,\Rightarrow\,$ more volatile food prices in US vs UK).}
 \]
-(A plain log ratio $\ln(s^{\US}_t/s^{\UK}_t)$ also works, but log-odds behaves better near $0/1$.)
+
+\paragraph{Exchange rate volatility.}
+Let $\sigma^{\text{FX}}_t$ denote the volatility of the US/UK exchange rate.
 
 \medskip
 \noindent Add lags to reduce simultaneity: use $x_{t-\ell}$ with $\ell\in\{1,2\}$.
@@ -74,7 +64,7 @@ u_t \equiv \underbrace{\ln\!\frac{s^{\US}_t}{1-s^{\US}_t}}_{\logit(s^{\US}_t)}
 Pick a horizon $h$ (e.g., 5 or 10 years). Let the \emph{relative power score} be $R_t$:
 \begin{itemize}[leftmargin=1.5em]
   \item \textbf{GDP leader (PTT-lite):} \quad $R_t \equiv \ln\!\big(\mathrm{GDP}^{\US}_t/\mathrm{GDP}^{\UK}_t\big)$.
-  \item \textbf{Composite (optional):} \quad $R_t = w_g\,g_t + w_m\,m_t + w_u\,u_t$ (standardize components, set $w$ by PCA or equal weights).
+  \item \textbf{Composite (optional):} \quad $R_t = w_m\,m_t + w_e\,e_t + w_v\,v_t + w_{\sigma}\,\sigma^{\text{FX}}_t$ (standardize components, set $w$ by PCA or equal weights).
 \end{itemize}
 
 Two binary targets:
@@ -89,18 +79,19 @@ Two binary targets:
 
 \section{Logistic specification}
 
-Let $X_t = \big[\tilde a_{t-\ell},\, g_{t-\ell},\, m_{t-\ell},\, e_{t-\ell},\, u_{t-\ell}\big]$. Include a smooth time trend $f(t)$ (e.g., cubic spline) to absorb global drift:
+Let $X_t = \big[m_{t-\ell},\, e_{t-\ell},\, v_{t-\ell},\, \sigma^{\text{FX}}_{t-\ell}\big]$. Include a smooth time trend $f(t)$ (e.g., cubic spline) to absorb global drift:
 \[
 \Pr\!\big(Y^{(h)}_t=1 \mid X_t\big)
-= \Lambda\!\Big(\beta_0 + \beta_a\,\tilde a_{t-\ell} + \beta_g\,g_{t-\ell}
-+ \beta_m\,m_{t-\ell} + \beta_e\,e_{t-\ell} + \beta_u\,u_{t-\ell} + f(t)\Big),
+= \Lambda\!\Big(\beta_0 + \beta_m\,m_{t-\ell}
++ \beta_e\,e_{t-\ell} + \beta_v\,v_{t-\ell} + \beta_{\sigma}\,\sigma^{\text{FX}}_{t-\ell} + f(t)\Big),
 \]
 where $\Lambda(z)=\frac{1}{1+e^{-z}}$.
 
 \paragraph{Interpretation.}
-$\beta_g>0$: a higher US/UK GDP ratio today raises the probability the US leads at $t+h$.
-$\beta_a>0$: cheaper wheat in the US (relative affordability positive) raises that probability (structural-change channel).
-Expect $\beta_m>0$, $\beta_u>0$, $\beta_e>0$.
+$\beta_m>0$: higher US military share relative to UK raises the probability the US GDP advantage increases.
+$\beta_e>0$: higher US education levels relative to UK raise that probability.
+$\beta_v$: higher food price volatility in US vs UK may indicate structural instability (sign ambiguous).
+$\beta_{\sigma}$: exchange rate volatility effects on future GDP advantage (sign ambiguous).
 
 \paragraph{Trend.}
 $f(t)$: natural cubic spline with 3--5 df. With only two countries, do not include country fixed effects (collinear).
@@ -139,14 +130,13 @@ so $>0$ favors US, $<0$ favors UK.
 \begin{enumerate}[leftmargin=1.5em]
 \item \textbf{Build relative predictors:}
 \[
-\tilde a_t = -\ln\!\frac{A^{\US}_t}{A^{\UK}_t},\quad
-g_t = \ln\!\frac{\mathrm{GDP}^{\US}_t}{\mathrm{GDP}^{\UK}_t},\quad
 m_t = \ln\!\frac{S^{\US}_t}{S^{\UK}_t},
 \]
-where $S^{\US}_t = \mathrm{MilEx}^{\US}_t/\sum_i \mathrm{MilEx}^i_t$ and $S^{\UK}_t = \mathrm{MilEx}^{\UK}_t/\sum_i \mathrm{MilEx}^i_t$,
+where $S^{\US}_t = \mathrm{MilCap}^{\US}_t/\sum_i \mathrm{MilCap}^i_t$ and $S^{\UK}_t = \mathrm{MilCap}^{\UK}_t/\sum_i \mathrm{MilCap}^i_t$,
 \[
 e_t = \ln\!\frac{\mathrm{Edu}^{\US}_t}{\mathrm{Edu}^{\UK}_t},\quad
-u_t = \logit(s^{\US}_t) - \logit(s^{\UK}_t).
+v_t = \ln\!\frac{\sigma^{\US}_t}{\sigma^{\UK}_t},\quad
+\sigma^{\text{FX}}_t = \text{exchange rate volatility}.
 \]
 
 \item \textbf{Create target $Y^{(h)}_t$:}

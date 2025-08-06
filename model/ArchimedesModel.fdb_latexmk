@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1754396320 "/Users/forest/Dropbox/post-doc/git/archimedes/project-archimedes/model/ArchimedesModel.tex" "ArchimedesModel.pdf" "ArchimedesModel" 1754396321 0
-  "/Users/forest/Dropbox/post-doc/git/archimedes/project-archimedes/model/ArchimedesModel.tex" 1754396320 6257 1b0f05ec255d4e633d0eda9571bf356f ""
+["pdflatex"] 1754465734 "/Users/forest/Dropbox/post-doc/git/archimedes/project-archimedes/model/ArchimedesModel.tex" "ArchimedesModel.pdf" "ArchimedesModel" 1754465736 0
+  "/Users/forest/Dropbox/post-doc/git/archimedes/project-archimedes/model/ArchimedesModel.tex" 1754465734 5879 9590d22bdef1f27cfc28d4a24f9bd5f7 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
@@ -38,7 +38,6 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1248133631 32362 179c33bbf43f19adbb3825bb4e36e57a ""
-  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1248133631 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1248133631 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
@@ -105,9 +104,9 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1698183178 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1698183167 7883458 f9367fee1ca993c058dc469e47ee881c ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "ArchimedesModel.aux" 1754396321 2252 f0596213961234828e6fe75f4ba85f1c "pdflatex"
-  "ArchimedesModel.out" 1754396321 1491 d7c90719ba116062c86a067ded82437e "pdflatex"
-  "ArchimedesModel.tex" 1754396320 6257 1b0f05ec255d4e633d0eda9571bf356f ""
+  "ArchimedesModel.aux" 1754465736 2082 3257d6c8dc4e32dbc0d383c82a365356 "pdflatex"
+  "ArchimedesModel.out" 1754465736 1491 d7c90719ba116062c86a067ded82437e "pdflatex"
+  "ArchimedesModel.tex" 1754465734 5879 9590d22bdef1f27cfc28d4a24f9bd5f7 ""
   (generated)
   "ArchimedesModel.aux"
   "ArchimedesModel.log"
