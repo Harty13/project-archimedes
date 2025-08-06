@@ -132,3 +132,6 @@ Thumbs.db
 *.log
 config/local.py
 .secrets
+
+# big docs
+TRADHIST_v4.dta
